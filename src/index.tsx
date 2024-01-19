@@ -1,32 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { ThemeProvider } from 'styled-components';
-import App from './App';
-import { theme } from "./theme";
+import ReactDOM from "react-dom";
 import { QueryClient, QueryClientProvider } from 'react-query';
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { RecoilRoot } from "recoil";
 
 const queryClient = new QueryClient();
 
-const darkTheme = {
-  textColor: "whitesmoke",
-  backgroundColor: "#111"
-}
-
-const lightTheme = {
-  textColor: "#111",
-  backgroundColor: "whitesmoke"
-}
-
 ReactDOM.render(
-  <React.StrictMode>
+  <RecoilRoot>
     <QueryClientProvider client={queryClient}>
-      <ThemeProvider theme={theme}>
-        <App />
-      </ThemeProvider>
+      <App />
     </QueryClientProvider>
-  </React.StrictMode>,
+  </RecoilRoot>,
   document.getElementById('root')
 );
 
-
+reportWebVitals();
 
