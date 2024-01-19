@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import Router from "./Router";
-import { Helmet } from "react-helmet-async";
+import { HelmetProvider } from "react-helmet-async";
 
 const GlobalStyle = createGlobalStyle`
 html, body, div, span, applet, object, iframe,
@@ -67,9 +67,9 @@ a {
 function App() {
   return (
     <>
-    <Helmet>
+    <HelmetProvider>
       <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400&family=Open+Sans:wght@400;600&family=Rubik+Doodle+Shadow&display=swap" />
-    </Helmet>
+    </HelmetProvider>
       <GlobalStyle />
       <Router />
     </>
